@@ -1,30 +1,27 @@
 const express = require("express");
+const {
+  getBlogs,
+  createBlog,
+  deleteBlog,
+  updateBlog,
+  getBlog,
+} = require("../controllers/blogControllers");
 
 const blogsRouter = express.Router();
 
 // get all blogs
-blogsRouter.get("/", (req, res) => {
-  res.json({ msg: "get all blogs" });
-});
+blogsRouter.get("/", getBlogs);
 
 // get single blog
-blogsRouter.get("/:id", (req, res) => {
-  res.json({ msg: "get a blog" });
-});
+blogsRouter.get("/:id", getBlog);
 
 // create blog
-blogsRouter.post("/", (req, res) => {
-  res.json({ msg: "creating a blog" });
-});
+blogsRouter.post("/", createBlog);
 
 // delete blog
-blogsRouter.delete("/:id", (req, res) => {
-  res.json({ msg: "delete a blog" });
-});
+blogsRouter.delete("/:id", deleteBlog);
 
 // edit blog
-blogsRouter.patch("/:id", (req, res) => {
-  res.json({ msg: "update a blog" });
-});
+blogsRouter.patch("/:id", updateBlog);
 
 module.exports = blogsRouter;
