@@ -1,0 +1,48 @@
+.create {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.create-form {
+  width: clamp(60%, 700px, 100%);
+  padding: 60px 80px;
+  margin: 60px 0;
+  background-color: #212121;
+  border-radius: 36px;
+}
+.create-heading {
+  font-size: 48px;
+  font-weight: 800px;
+  padding: 30px 0;
+}
+.create-input {
+  display: block;
+  width: 100%;
+  font-size: 20px;
+  padding: 10px 10px;
+  margin: 10px 0 30px 0;
+  border: 1px solid #ddd;
+}
+.button-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0px;
+}
+.button-wrapper button {
+  background-color: #f2e22ed5;
+  width: 50%;
+  padding: 12px;
+  border: 0 none transparent;
+  font-size: large;
+  color: #dfdfdf;
+  font-weight: 400;
+}
+@media (max-width: 700px) {
+  .create-form {
+    padding: 60px 20px;
+    border-radius: 0;
+  }
+}

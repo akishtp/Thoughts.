@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import BlogDetails from "../components/BlogDetails/BlogDetails";
+import BlogDetails from "../../components/BlogDetails/BlogDetails";
 import "./Home.css";
 
 const Home = () => {
