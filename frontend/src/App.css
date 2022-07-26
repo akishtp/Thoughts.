@@ -1,3 +1,6 @@
 .App {
   padding-top: 3.6rem;
+  background-color: #181818;
+  min-height: 100vh;
+  color: #818181;
 }

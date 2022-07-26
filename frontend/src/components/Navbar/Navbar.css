@@ -18,7 +18,7 @@
   color: #dfdfdf;
 }
 .left-side {
-  font-size: 48px;
+  font-size: 42px;
   font-family: "Montserrat", sans-serif;
 }
 .right-side {
@@ -28,7 +28,7 @@
 }
 .new-btn {
   background-color: #f2e22ed5;
-  padding: 12px 16px;
+  padding: 10px 14px;
   border: 0 none transparent;
   border-radius: 12px;
   font-size: large;
