@@ -18,7 +18,11 @@ const Home = () => {
 
   return (
     <div className="home">
-      {blogs && blogs.map((blog) => <BlogDetails blog={blog} key={blog._id} />)}
+      {blogs ? (
+        blogs.map((blog) => <BlogDetails blog={blog} key={blog._id} />)
+      ) : (
+        <h1>There are no blogs currently, Try creating one</h1>
+      )}
     </div>
   );
 };

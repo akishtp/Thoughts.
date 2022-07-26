@@ -66,7 +66,7 @@ const Create = () => {
           />
         </label>
         <div className="button-wrapper">
-          <button>Submit</button>
+          <button className="submit-button">Submit</button>
         </div>
       </form>
     </div>

@@ -4,19 +4,31 @@
   width: clamp(75%, 700px, 98%);
   background: #fff;
   border-radius: 4px;
-  margin: 20px 0;
+  margin: 15px 0;
   padding: 30px 60px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
   background-color: #212121;
 }
 .blog-details:first-child {
-  margin: 50px 0 0 0;
+  margin: 50px 0 15px 0;
+}
+.first-line {
+  display: flex;
+  justify-content: space-between;
 }
 .blog-title {
   font-family: "Roboto Slab", serif;
   margin: 0 0 10px 0;
   font-size: 2em;
   color: #f2e22e;
+}
+.delete-button {
+  background-color: #ff0000;
+  padding: 10px;
+  border-radius: 36%;
+  height: fit-content;
+  border: 1px solid transparent;
+  color: white;
 }
 .blog-body {
   margin: 0;
@@ -32,4 +44,10 @@
   padding: 5px 12px;
   margin: 10px 0;
   width: fit-content;
+}
+@media (max-width: 700px) {
+  .blog-details {
+    padding: 60px 20px;
+    border-radius: 0;
+  }
 }

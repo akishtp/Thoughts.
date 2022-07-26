@@ -8,3 +8,6 @@
 body {
   font-family: "Comfortaa", cursive;
 }
+button {
+  cursor: pointer;
+}
