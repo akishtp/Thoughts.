@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
+import gfm from "remark-gfm";
 import "./Create.css";
 
 const Create = () => {
@@ -7,6 +10,7 @@ const Create = () => {
   const [body, setBody] = useState("");
   // eslint-disable-next-line
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,13 +34,13 @@ const Create = () => {
       setTitle("");
       setTag("");
       setBody("");
-      console.log("new workout added:", json);
+      navigate("/");
     }
   };
 
   return (
     <div className="create">
-      <form className="create-form" onSubmit={handleSubmit}>
+      <form className="create-form">
         <h2 className="create-heading">CREATE BLOG</h2>
         <label className="create-label">
           Title :
@@ -57,16 +61,22 @@ const Create = () => {
           />
         </label>
         <label className="create-label">
-          Content :
-          <input
+          Content ( tip : You can also use markdown ) :
+          <textarea
             type="text"
             onChange={(e) => setBody(e.target.value)}
             value={body}
             className="create-input"
           />
         </label>
+        <span>Preview :</span>
+        <ReactMarkdown remarkPlugins={[gfm]} className="blog-md">
+          {body}
+        </ReactMarkdown>
         <div className="button-wrapper">
-          <button className="submit-button">Submit</button>
+          <button className="submit-button" onClick={handleSubmit}>
+            Submit
+          </button>
         </div>
       </form>
     </div>

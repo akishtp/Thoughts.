@@ -3,6 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 .create-form {
   width: clamp(60%, 700px, 100%);
@@ -17,12 +18,14 @@
   padding: 30px 0;
 }
 .create-input {
+  background-color: #121212;
   display: block;
   width: 100%;
   font-size: 20px;
   padding: 10px 10px;
   margin: 10px 0 30px 0;
-  border: 1px solid #ddd;
+  border: 1px solid #ddddddae;
+  color: #727272;
 }
 .button-wrapper {
   width: 100%;
@@ -45,4 +48,13 @@
     padding: 60px 20px;
     border-radius: 0;
   }
+}
+.create span {
+  font-size: larger;
+  font-weight: 600;
+}
+.blog-md {
+  width: 100%;
+  padding: 20px 0;
+  font-size: 18px;
 }

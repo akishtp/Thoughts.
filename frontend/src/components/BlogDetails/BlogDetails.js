@@ -1,5 +1,7 @@
 import "./BlogDetails.css";
 import { HiTrash } from "react-icons/hi";
+import ReactMarkdown from "react-markdown";
+import gfm from "remark-gfm";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
 const BlogDetails = ({ blog }) => {
@@ -14,6 +16,7 @@ const BlogDetails = ({ blog }) => {
     await fetch(`/api/blogs/${blog._id}`, {
       method: "DELETE",
     });
+    window.location.reload();
   };
 
   return (
@@ -24,7 +27,9 @@ const BlogDetails = ({ blog }) => {
           <HiTrash size={18} onClick={handleDelete} />
         </button>
       </div>
-      <p className="blog-body">{blog.body}</p>
+      <p className="blog-body">
+        <ReactMarkdown remarkPlugins={[gfm]}>{blog.body}</ReactMarkdown>
+      </p>
       {blog.tag && <div className="tag">{blog.tag}</div>}
       <span className="time">
         {formatDistanceToNow(new Date(blog.createdAt), { addSuffix: true })}

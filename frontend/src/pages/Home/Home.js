@@ -3,7 +3,7 @@ import BlogDetails from "../../components/BlogDetails/BlogDetails";
 import "./Home.css";
 
 const Home = () => {
-  const [blogs, setBlogs] = useState(null);
+  const [blogs, setBlogs] = useState([]);
   useEffect(() => {
     const fetchblogs = async () => {
       const response = await fetch("/api/blogs");
