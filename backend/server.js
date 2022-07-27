@@ -2,6 +2,7 @@
 const express = require("express");
 const { default: mongoose } = require("mongoose");
 const blogsRouter = require("./routes/blogsRoutes");
+const path = require("path");
 
 // dotenv config
 require("dotenv").config();
@@ -14,6 +15,19 @@ app.use(express.json());
 
 // routes
 app.use("/api/blogs", blogsRouter);
+
+// ------------------------- deployment -------------------------
+__dirname = path.resolve();
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "/frontend/build")));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
+  });
+} else {
+  app.get("/", (req, res) => {
+    res.send("API is running...");
+  });
+}
 
 // connect to DB
 mongoose
