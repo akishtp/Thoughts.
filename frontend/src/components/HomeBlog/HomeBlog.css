@@ -22,3 +22,13 @@
 .blog-body{
   padding: 10% 0;
 }
+@media (max-width: 900px) {
+  .container {
+    column-count: 2;
+  }
+}
+@media (max-width: 540px) {
+  .container {
+    column-count: 1;
+  }
+}
