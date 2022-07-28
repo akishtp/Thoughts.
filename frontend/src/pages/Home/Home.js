@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import BlogDetails from "../../components/BlogDetails/BlogDetails";
+import HomeBlog from "../../components/HomeBlog/HomeBlog";
 import "./Home.css";
 
 const Home = () => {
@@ -18,11 +19,13 @@ const Home = () => {
 
   return (
     <div className="home">
-      {blogs ? (
-        blogs.map((blog) => <BlogDetails blog={blog} key={blog._id} />)
-      ) : (
-        <h1>There are no blogs currently, Try creating one</h1>
-      )}
+      <div className="container">
+        {blogs ? (
+          blogs.map((blog) => <HomeBlog blog={blog} key={blog._id} />)
+        ) : (
+          <h1>There are no blogs, Try creating one</h1>
+        )}
+      </div>
     </div>
   );
 };

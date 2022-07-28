@@ -4,8 +4,6 @@
   "description": "Blogs by Verlow",
   "main": "backend/server.js",
   "scripts": {
-    "backend": "nodemon",
-    "frontend": "npm start --prefix frontend",
     "start": "node backend/server.js",
     "heroku-postbuild": "cd frontend && npm install --only=dev && npm install && npm run build"
   },
