@@ -1,0 +1,26 @@
+.blog:nth-child(1) {
+  background: linear-gradient(135deg, #000000 0%, #3d3d3d 100%);
+  border-radius: 16px;
+  width: 48vw;
+  height: 24vw;
+  margin: 1vw;
+  color: #fff;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  padding: 2vw;
+}
+.blog:nth-child(1) .title {
+  font-weight: 600;
+  font-size: 2rem;
+  margin: 3vw 0 2vw 0;
+}
+
+@media only screen and (max-width: 669px) {
+  .blog:nth-child(1) {
+    width: 96vw;
+    height: 36vh;
+    padding: 2vh;
+    margin: 2vw;
+  }
+}

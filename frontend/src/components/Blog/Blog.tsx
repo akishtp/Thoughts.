@@ -10,8 +10,8 @@ interface BlogProps {
 const Blog: React.FC<BlogProps> = ({ title, date, body }) => {
   return (
     <div className="blog">
-      <div className="title">{title}</div>
       <div className="date">{date}</div>
+      <div className="title">{title}</div>
       <div className="body">{body}</div>
     </div>
   );
