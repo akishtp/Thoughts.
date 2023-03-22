@@ -1,12 +1,19 @@
-import React from "react";
-import Blog from "../../components/Blog/Blog";
+import React, { useEffect } from "react";
+import { useAppDispatch } from "../../app/hooks";
+// import Blog from "../../components/Blog/Blog";
+import { getBlogs } from "../../features/blog/blogActions";
 import "./Home.css";
 
 const Home: React.FC = () => {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(getBlogs());
+  });
   return (
     <div className="home">
       <div className="new-blogs">
-        <div className="blog1"></div>
+        <div className="blog1">Reconstruction going on 👷‍♂️🪚</div>
         <div className="blog-2n3">
           <div className="blog2"></div>
           <div className="blog3"></div>

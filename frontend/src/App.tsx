@@ -8,7 +8,6 @@ function App() {
       <div className="App">
         <Navbar />
         <Routes>
-          Reconstruction going on 👷‍♂️🔨
           <Route path="/" element={<Home />} />
         </Routes>
       </div>
