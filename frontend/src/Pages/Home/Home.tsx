@@ -11,8 +11,8 @@ const Home: React.FC = () => {
   useEffect(() => {
     console.log("how many times does it run?");
 
-    // dispatch(getBlogs());
-  });
+    dispatch(getBlogs());
+  }, []);
   return (
     <div className="home">
       <div className="new-blogs">

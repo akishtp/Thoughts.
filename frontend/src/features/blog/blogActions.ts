@@ -1,5 +1,5 @@
-import axios, { AxiosError } from "axios";
-import { createAsyncThunk, isRejectedWithValue } from "@reduxjs/toolkit";
+import axios from "axios";
+import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const getBlogs = createAsyncThunk("slice/type", async () => {
   try {
@@ -7,7 +7,8 @@ export const getBlogs = createAsyncThunk("slice/type", async () => {
       "https://akish-blogs.up.railway.app/api/blogs"
     );
     return data;
-  } catch (error) {
-    return error;
+  } catch (error: any) {
+    console.log("inside error", error.stack);
+    // return error;
   }
 });
