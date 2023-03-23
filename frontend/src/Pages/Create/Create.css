@@ -1,0 +1,49 @@
+.create {
+  min-height: calc(100vh - 82px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.full-side {
+  width: 69vw;
+  background-color: #efefef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.create .left-side {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8vh 0;
+}
+.create .left-side label {
+  display: flex;
+  flex-direction: column;
+  margin: 8px 0;
+}
+.create .left-side input {
+  height: 36px;
+  border: none;
+  border-bottom: 1px solid #000;
+  width: 32vw;
+  padding: 0 8px;
+}
+/* .create .left-side input {
+  border: none;
+} */
+.create .right-side {
+  width: 30vw;
+  background: linear-gradient(90deg, #000000, #3d3d3d);
+  color: #fff;
+  border-radius: 16px;
+  margin: 1vw;
+  padding: 20px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  height: 30vh;
+  display: flex;
+  align-items: center;
+}

@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { getBlogs } from "./blogActions";
 
 interface BlogState {
-  blogs: [];
+  blogs: any;
   loading: boolean;
   error: null | string | unknown;
 }
