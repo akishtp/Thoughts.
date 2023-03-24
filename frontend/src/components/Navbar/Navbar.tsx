@@ -1,17 +1,20 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar: React.FC = () => {
   return (
     <>
       <div className="small-nav">
-        <div className="left-side">akishtp</div>
+        <a href="http://akishtp.github.io/akishtp" className="left-side">
+          akishtp
+        </a>
         <div className="right-side">twitiggitsite</div>
       </div>
       <nav className="navbar">
-        <div className="left-side">
+        <Link to="/" className="left-side">
           Blogs.<span>(Journal)</span>
-        </div>
+        </Link>
       </nav>
     </>
   );
