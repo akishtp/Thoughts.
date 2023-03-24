@@ -24,12 +24,28 @@
   flex-direction: column;
   margin: 8px 0;
 }
-.create .left-side input {
+.create .left-side input,
+textarea {
   height: 36px;
   border: none;
   border-bottom: 1px solid #000;
   width: 32vw;
-  padding: 0 8px;
+  padding: 8px 8px;
+  font-size: 18px;
+  font-family: "Inter", sans-serif;
+}
+textarea {
+  height: 160px;
+}
+.create-blog-button {
+  height: 36px;
+  width: 32vw;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #000;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: 600;
+  font-size: 18px;
 }
 /* .create .left-side input {
   border: none;
@@ -40,10 +56,10 @@
   color: #fff;
   border-radius: 16px;
   margin: 1vw;
-  padding: 20px;
+  padding: 32px;
+  min-height: 42vh;
   font-size: 1.4rem;
   font-weight: 600;
-  height: 30vh;
   display: flex;
   align-items: center;
 }

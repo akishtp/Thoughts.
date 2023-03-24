@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getBlogs } from "./blogActions";
+import { createBlog, getBlogs } from "./blogActions";
 
 interface BlogState {
   blogs: any;
@@ -28,6 +28,18 @@ const blogsSlice = createSlice({
         state.blogs = payload;
       })
       .addCase(getBlogs.rejected, (state, { payload }) => {
+        state.loading = false;
+        state.error = payload;
+      })
+      .addCase(createBlog.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(createBlog.fulfilled, (state, { payload }) => {
+        state.loading = false;
+        state.blogs = payload;
+      })
+      .addCase(createBlog.rejected, (state, { payload }) => {
         state.loading = false;
         state.error = payload;
       });
