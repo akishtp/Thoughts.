@@ -1,4 +1,16 @@
-export default function Inputs() {
+"use client";
+
+import { ThoughtProps } from "@/app/types";
+import { FC } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
+
+interface InputsProps {
+  submit: SubmitHandler<ThoughtProps>;
+}
+
+const Inputs: FC<InputsProps> = ({ submit }) => {
+  const { register, handleSubmit } = useForm<ThoughtProps>();
+
   return (
     <div className="flex pt-10">
       <div className="border-2 border-neutral-900 w-3/5">
@@ -12,21 +24,38 @@ export default function Inputs() {
         <div className="text-3xl px-10">Title</div>
         <div className="px-10"></div>
       </div>
-      <form className="w-2/5 flex flex-col px-4">
+      <form
+        className="w-2/5 flex flex-col px-4"
+        onSubmit={handleSubmit(submit)}
+      >
         <label className="flex flex-col py-3">
           Title
-          <input type="text" className="h-10 border-b border-neutral-900" />
+          <input
+            type="text"
+            className="h-10 border-b border-neutral-900"
+            {...register("title", { required: true })}
+          />
         </label>
         <label className="flex flex-col py-3">
           Cover Image (url)
-          <input type="text" className="h-10 border-b border-neutral-900" />
+          <input
+            type="text"
+            className="h-10 border-b border-neutral-900"
+            {...register("imgurl")}
+          />
         </label>
         <label className="flex flex-col py-3">
           Content (markdown)
-          <textarea rows={3} className="border-b border-neutral-900"></textarea>
+          <textarea
+            rows={3}
+            className="border-b border-neutral-900"
+            {...register("content", { required: true })}
+          ></textarea>
         </label>
         <button className="bg-neutral-900 text-white h-12 my-3">Submit</button>
       </form>
     </div>
   );
-}
+};
+
+export default Inputs;
