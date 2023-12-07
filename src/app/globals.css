@@ -5,3 +5,9 @@
 body {
   background-color: #f5f2e8;
 }
+
+.cool-shadow {
+  box-shadow: -40px 36px 0px 4px rgba(0, 0, 0, 0.9);
+  -webkit-box-shadow: -40px 36px 0px 4px rgba(0, 0, 0, 0.9);
+  -moz-box-shadow: -40px 36px 0px 4px rgba(0, 0, 0, 0.9);
+}

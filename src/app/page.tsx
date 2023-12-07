@@ -6,7 +6,6 @@ export default function Home() {
       <div>Contetn3</div>
       <div>Contetn1</div>
       <div>Contetn2</div>
-      <div>Contetn3</div>
     </div>
   );
 }
