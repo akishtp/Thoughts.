@@ -11,3 +11,9 @@ body {
   -webkit-box-shadow: -40px 36px 0px 4px rgba(0, 0, 0, 0.9);
   -moz-box-shadow: -40px 36px 0px 4px rgba(0, 0, 0, 0.9);
 }
+
+.cool-shadow-two {
+  box-shadow: 40px 36px 0px 4px rgba(0, 0, 0, 0.9);
+  -webkit-box-shadow: 40px 36px 0px 4px rgba(0, 0, 0, 0.9);
+  -moz-box-shadow: 40px 36px 0px 4px rgba(0, 0, 0, 0.9);
+}
