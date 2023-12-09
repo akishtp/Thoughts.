@@ -1,6 +1,6 @@
 "use client";
 
-import Inputs from "@/components/inputs";
+import Inputs from "@/components/Inputs";
 import { SubmitHandler } from "react-hook-form";
 import { ThoughtProps } from "../types";
 
