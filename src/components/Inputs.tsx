@@ -1,6 +1,7 @@
 "use client";
 
 import { ThoughtProps } from "@/app/types";
+import Image from "next/image";
 import { FC } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 
@@ -16,9 +17,9 @@ const Inputs: FC<InputsProps> = ({ submit, isEditing }) => {
     <div className="flex pt-10">
       <div className="border-2 border-neutral-900 w-3/5">
         <div className="w-100 flex justify-center pt-10 pb-14 pl-10">
-          <img
+          <Image
             src="https://images.unsplash.com/photo-1596428693280-648ba296233c?q=80&w=2944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="cover image"
+            alt="Could not fetch Image"
             className="w-3/4 cool-shadow"
           />
         </div>
