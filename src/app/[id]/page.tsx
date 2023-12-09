@@ -1,12 +1,7 @@
 const Blog = () => {
   return (
     <div>
-      <div className="text-4xl">
-        Title Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil
-        architecto impedit aut odio hic accusantium porro obcaecati tempora, est
-        expedita recusandae officiis. Beatae nobis inventore dolorum iure,
-        distinctio commodi totam?
-      </div>
+      <div className="text-4xl">Title</div>
       <div>
         <div className="float-right w-1/2 pr-12 pl-8 pb-10">
           <img

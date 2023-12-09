@@ -6,9 +6,10 @@ import { SubmitHandler, useForm } from "react-hook-form";
 
 interface InputsProps {
   submit: SubmitHandler<ThoughtProps>;
+  isEditing: boolean;
 }
 
-const Inputs: FC<InputsProps> = ({ submit }) => {
+const Inputs: FC<InputsProps> = ({ submit, isEditing }) => {
   const { register, handleSubmit } = useForm<ThoughtProps>();
 
   return (
@@ -52,7 +53,9 @@ const Inputs: FC<InputsProps> = ({ submit }) => {
             {...register("content", { required: true })}
           ></textarea>
         </label>
-        <button className="bg-neutral-900 text-white h-12 my-3">Submit</button>
+        <button className="bg-neutral-900 text-white h-12 my-3">
+          {isEditing ? "Edit" : "Create"}
+        </button>
       </form>
     </div>
   );
