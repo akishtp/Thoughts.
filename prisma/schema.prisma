@@ -1,13 +1,13 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
+// schema.prisma
 
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("BLOG_PRISMA_URL") // uses connection pooling
+  directUrl = env("BLOG_URL_NON_POOLING") // uses a direct connection
 }
 
 model Thought {

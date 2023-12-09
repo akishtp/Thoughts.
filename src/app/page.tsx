@@ -18,8 +18,6 @@ async function getThoughts() {
 
 export default async function Home() {
   const thoughts = await getThoughts();
-  // console.log(thoughts);
-
   return (
     <div className="columns-1 md:columns-2 lg:columns-3">
       {thoughts.map((thought) => (

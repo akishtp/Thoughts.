@@ -42,7 +42,7 @@ const Inputs: FC<InputsProps> = ({ submit, isEditing }) => {
           <input
             type="text"
             className="h-10 border-b border-neutral-900"
-            {...register("imgurl")}
+            {...register("img")}
           />
         </label>
         <label className="flex flex-col py-3">
