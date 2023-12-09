@@ -1,5 +1,4 @@
 import prisma from "@/lib/prisma";
-import Image from "next/image";
 import { FC } from "react";
 
 interface BlogProps {
@@ -24,11 +23,7 @@ const Blog: FC<BlogProps> = async ({ params }) => {
       <div>
         {thought?.img && (
           <div className="float-right w-1/2 pr-12 pl-8 pb-10">
-            <Image
-              src={thought?.img}
-              className="cool-shadow-two"
-              alt="Could not fetch Image"
-            />
+            <img src={thought?.img} className="cool-shadow-two" />
           </div>
         )}
         <p className="text-justify pt-6">{thought?.content}</p>
