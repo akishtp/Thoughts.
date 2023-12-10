@@ -1,19 +1,8 @@
 import ThoughtCard from "@/components/ThoughtCard";
 import prisma from "@/lib/prisma";
 
-export const revalidate = 1;
 async function getThoughts() {
-  const response = await prisma.thought.findMany({
-    select: {
-      id: true,
-      title: true,
-      content: true,
-      img: true,
-    },
-    orderBy: {
-      createdAt: "desc",
-    },
-  });
+  const response = await prisma.thought.findMany();
   return response;
 }
 
