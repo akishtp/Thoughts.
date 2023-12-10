@@ -3,7 +3,7 @@
 import { ThoughtProps } from "@/app/types";
 import Inputs from "@/components/Inputs";
 import { TrashIcon } from "@heroicons/react/24/outline";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { FC } from "react";
@@ -18,8 +18,29 @@ interface EditProps {
 const Edit: FC<EditProps> = ({ params }) => {
   const router = useRouter();
 
+  const { data: dataThought, isLoading: isFetchingThought } = useQuery({
+    queryKey: ["thoughts", params.id],
+    queryFn: async () => {
+      const response = await axios.get(`/api/thoughts/${params.id}`);
+      return response.data;
+    },
+  });
+
+  const { mutate: updateThought } = useMutation({
+    mutationFn: (newThought: ThoughtProps) => {
+      return axios.patch(`/api/thoughts/${params.id}`, newThought);
+    },
+    onError: (error) => {
+      console.error(error);
+    },
+    onSuccess: () => {
+      router.push("/");
+      router.refresh();
+    },
+  });
+
   const handleEditPost: SubmitHandler<ThoughtProps> = (data) => {
-    console.log(data);
+    updateThought(data);
   };
 
   const { mutate: handleDelete, isPending } = useMutation({
@@ -34,6 +55,10 @@ const Edit: FC<EditProps> = ({ params }) => {
       router.refresh();
     },
   });
+
+  if (isFetchingThought) {
+    return <div>Loading fetching thought</div>;
+  }
 
   return (
     <div>
@@ -53,7 +78,7 @@ const Edit: FC<EditProps> = ({ params }) => {
           )}
         </button>
       </div>
-      <Inputs submit={handleEditPost} isEditing={true} />
+      <Inputs submit={handleEditPost} isEditing initialValue={dataThought} />
     </div>
   );
 };

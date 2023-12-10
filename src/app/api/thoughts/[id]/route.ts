@@ -38,3 +38,15 @@ export async function PATCH(req: Request, context: contextProps) {
     return NextResponse.json({ message: error }, { status: 500 });
   }
 }
+
+export async function GET(req: Request, context: contextProps) {
+  try {
+    const thought = await prisma.thought.findFirst({
+      where: { id: context.params.id },
+    });
+
+    return NextResponse.json(thought, { status: 200 });
+  } catch (error) {
+    return NextResponse.json({ message: error }, { status: 500 });
+  }
+}

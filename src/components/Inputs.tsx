@@ -7,10 +7,13 @@ import { SubmitHandler, useForm } from "react-hook-form";
 interface InputsProps {
   submit: SubmitHandler<ThoughtProps>;
   isEditing: boolean;
+  initialValue?: ThoughtProps;
 }
 
-const Inputs: FC<InputsProps> = ({ submit, isEditing }) => {
-  const { register, handleSubmit } = useForm<ThoughtProps>();
+const Inputs: FC<InputsProps> = ({ submit, isEditing, initialValue }) => {
+  const { register, handleSubmit } = useForm<ThoughtProps>({
+    defaultValues: initialValue,
+  });
 
   return (
     <div className="flex pt-10">
