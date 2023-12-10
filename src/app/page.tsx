@@ -1,5 +1,3 @@
-"use client";
-
 import ThoughtCard from "@/components/ThoughtCard";
 import prisma from "@/lib/prisma";
 
