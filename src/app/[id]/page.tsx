@@ -28,7 +28,11 @@ const Blog: FC<BlogProps> = async ({ params }) => {
       <div>
         {thought?.img && (
           <div className="w-full pr-12 pl-8 pb-10 md:float-right md:w-1/2 pt-10 md:pt-0">
-            <img src={thought?.img} className="cool-shadow-two" />
+            <img
+              src={thought?.img}
+              className="cool-shadow-two greyscale"
+              alt={`${thought.title}'s image 🎆`}
+            />
           </div>
         )}
         <p className="text-justify pt-6">{thought?.content}</p>
