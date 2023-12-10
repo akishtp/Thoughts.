@@ -30,7 +30,7 @@ const Blog: FC<BlogProps> = async ({ params }) => {
           <div className="w-full pr-12 pl-8 pb-10 md:float-right md:w-1/2 pt-10 md:pt-0">
             <img
               src={thought?.img}
-              className="cool-shadow-two greyscale"
+              className="cool-shadow-two grayscale"
               alt={`${thought.title}'s image 🎆`}
             />
           </div>
