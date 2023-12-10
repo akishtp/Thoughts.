@@ -1,5 +1,10 @@
 import ThoughtCard from "@/components/ThoughtCard";
 import prisma from "@/lib/prisma";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Thoughts.",
+};
 
 async function getThoughts() {
   const response = await prisma.thought.findMany({

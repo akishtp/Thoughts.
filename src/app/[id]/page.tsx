@@ -1,5 +1,10 @@
 import prisma from "@/lib/prisma";
 import { FC } from "react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Read",
+};
 
 interface BlogProps {
   params: {

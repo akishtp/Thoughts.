@@ -13,7 +13,11 @@ export default function Create() {
     createPost(data);
   };
 
-  const { mutate: createPost } = useMutation({
+  const {
+    mutate: createPost,
+    isSuccess,
+    isPending,
+  } = useMutation({
     mutationFn: (newThought: ThoughtProps) => {
       return axios.post("/api/thoughts/create", newThought);
     },
@@ -25,6 +29,11 @@ export default function Create() {
       router.refresh();
     },
   });
+
+  if (isPending || isSuccess) {
+    return <div>Ithentha mahn</div>;
+  }
+
   return (
     <div>
       <div className="text-4xl">Write...</div>

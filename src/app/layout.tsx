@@ -2,8 +2,14 @@ import { Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Providers from "@/components/Providers";
+import { Metadata } from "next";
 
 const playfair_display = Playfair_Display({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "Thoughts",
+  description: "Some thoughts I had...",
+};
 
 export default function RootLayout({
   children,

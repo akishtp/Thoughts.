@@ -11,6 +11,7 @@ interface ThoughtCardProps {
 }
 
 const ThoughtCard: FC<ThoughtCardProps> = ({ thought }) => {
+  thought.content = thought.content.substring(0, 420) + "...";
   return (
     <Link
       href={`/${thought.id}`}

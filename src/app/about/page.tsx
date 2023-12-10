@@ -1,3 +1,9 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Akish T P",
+};
+
 export default function AboutPage() {
   return (
     <div>
