@@ -8,7 +8,6 @@ export async function POST(req: Request) {
       data: {
         title: body.title,
         img: body.img,
-        content: body.content,
       },
     });
 

@@ -29,7 +29,6 @@ export async function PATCH(req: Request, context: contextProps) {
       },
       data: {
         title: body.title,
-        content: body.content,
         img: body.img,
       },
     });

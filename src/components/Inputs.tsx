@@ -40,14 +40,6 @@ const Inputs: FC<InputsProps> = ({ submit, isEditing, initialValue }) => {
             {...register("img")}
           />
         </label>
-        <label className="flex flex-col py-3">
-          Content (markdown)
-          <textarea
-            rows={3}
-            className="border-b border-neutral-900"
-            {...register("content", { required: true })}
-          ></textarea>
-        </label>
         <button className="bg-neutral-900 text-white h-12 my-3">
           {isEditing ? "Edit" : "Create"}
         </button>

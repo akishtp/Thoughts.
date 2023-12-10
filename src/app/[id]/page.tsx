@@ -15,7 +15,7 @@ interface BlogProps {
 async function getThought(id: string) {
   const response = await prisma.thought.findFirst({
     where: { id: id },
-    select: { id: true, img: true, title: true, content: true },
+    select: { id: true, img: true, title: true },
   });
   return response;
 }
@@ -35,7 +35,6 @@ const Blog: FC<BlogProps> = async ({ params }) => {
             />
           </div>
         )}
-        <p className="text-justify pt-6">{thought?.content}</p>
       </div>
     </div>
   );

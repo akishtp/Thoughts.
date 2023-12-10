@@ -5,13 +5,11 @@ interface ThoughtCardProps {
   thought: {
     id: string;
     title: string;
-    content: string;
     img: string | null;
   };
 }
 
 const ThoughtCard: FC<ThoughtCardProps> = ({ thought }) => {
-  thought.content = thought.content.substring(0, 420) + "...";
   return (
     <Link
       href={`/${thought.id}`}
@@ -27,7 +25,6 @@ const ThoughtCard: FC<ThoughtCardProps> = ({ thought }) => {
       <div className="font-bold text-xl pt-2 pb-2 hover:underline">
         {thought.title}
       </div>
-      <div>{thought.content}</div>
     </Link>
   );
 };

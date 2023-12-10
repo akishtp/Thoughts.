@@ -14,7 +14,6 @@ model Thought {
   id        String   @id @default(cuid())
   title     String
   img       String
-  content   String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }

@@ -13,7 +13,6 @@ async function getThoughts() {
     select: {
       id: true,
       title: true,
-      content: true,
       img: true,
     },
     orderBy: {
