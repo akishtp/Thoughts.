@@ -23,7 +23,7 @@ export default function RootLayout({
       >
         <Providers>
           <Navbar />
-          <div className="w-10/12 py-10">{children}</div>
+          <div className="w-11/12 py-10 md:w-10/12">{children}</div>
         </Providers>
       </body>
     </html>
