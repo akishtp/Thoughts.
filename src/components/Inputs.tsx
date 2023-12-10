@@ -18,10 +18,10 @@ const Inputs: FC<InputsProps> = ({ submit, isEditing, initialValue }) => {
   return (
     <div className="flex pt-10">
       <div className="w-3/5 hidden md:block bg-black text-white p-10">
-        Please don't do this
+        Please dont do this
       </div>
       <form
-        className="w-full flex flex-col px-4 md:w-2/5"
+        className="w-full flex flex-col pl-4 md:w-2/5"
         onSubmit={handleSubmit(submit)}
       >
         <label className="flex flex-col py-3">
