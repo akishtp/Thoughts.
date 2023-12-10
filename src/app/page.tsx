@@ -1,12 +1,14 @@
 import ThoughtCard from "@/components/ThoughtCard";
 import prisma from "@/lib/prisma";
 import { Metadata } from "next";
+import { unstable_noStore as noStore } from "next/cache";
 
 export const metadata: Metadata = {
   title: "Thoughts.",
 };
 
 async function getThoughts() {
+  noStore();
   const response = await prisma.thought.findMany({
     select: {
       id: true,
@@ -20,8 +22,6 @@ async function getThoughts() {
   });
   return response;
 }
-
-export const revalidate = 1;
 
 export default async function Home() {
   const thoughts = await getThoughts();
