@@ -31,7 +31,7 @@ export default function Create() {
   });
 
   if (isPending || isSuccess) {
-    return <div>Ithentha mahn</div>;
+    return <p className="text-2xl">Loading...</p>;
   }
 
   return (

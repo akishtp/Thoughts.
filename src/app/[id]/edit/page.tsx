@@ -26,7 +26,11 @@ const Edit: FC<EditProps> = ({ params }) => {
     },
   });
 
-  const { mutate: updateThought } = useMutation({
+  const {
+    mutate: updateThought,
+    isPending: isEditingThought,
+    isSuccess: editedThought,
+  } = useMutation({
     mutationFn: (newThought: ThoughtProps) => {
       return axios.patch(`/api/thoughts/${params.id}`, newThought);
     },
@@ -56,8 +60,8 @@ const Edit: FC<EditProps> = ({ params }) => {
     },
   });
 
-  if (isFetchingThought) {
-    return <div>Loading fetching thought</div>;
+  if (isFetchingThought || isEditingThought || editedThought) {
+    return <p className="text-2xl">Loading...</p>;
   }
 
   return (

@@ -3,7 +3,7 @@ import { FC } from "react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Read",
+  title: "Thoughts.",
 };
 
 interface BlogProps {
