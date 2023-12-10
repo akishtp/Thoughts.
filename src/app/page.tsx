@@ -3,6 +3,7 @@
 import ThoughtCard from "@/components/ThoughtCard";
 import prisma from "@/lib/prisma";
 
+export const revalidate = 1;
 async function getThoughts() {
   const response = await prisma.thought.findMany({
     select: {
